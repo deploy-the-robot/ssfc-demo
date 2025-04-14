@@ -1,0 +1,371 @@
+/*
+Theme Name: SSFC
+Theme URI:
+Author:
+Author URI:
+Description:
+Requires at least: 6.7
+Tested up to: 6.7
+Requires PHP: 5.7
+Version:
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Template: twentytwentyfive
+Text Domain: ssfc
+Tags:
+*/
+
+
+:root {
+  --wp--preset--shadow--deep: 0 0 35px -35px #000 !important;
+}
+
+
+
+/* Utility */
+.z-index-1 {
+  z-index: 1;
+}
+html {
+  scroll-behavior: smooth;
+}
+.has-shadow {
+    box-shadow: 0 0 35px -35px #000;
+}
+/* end */
+
+/* Site main nav */
+.ssfc-header {
+  z-index: 2;
+  position: relative !important;
+}
+.ssfc-header-logo {
+  height: 100%;
+  align-self: stretch;
+  position: relative !important;
+  width: 7.5em;
+  flex-shrink: 0;
+}
+.ssfc-header-logo figure {
+  position: absolute !important;
+  top: 0;
+  left: -2.5em;
+  width: 14em;
+}
+.block-editor-block-list__layout .ssfc-header-logo figure > div {
+  width: auto !important;
+  height: auto !important;
+}
+.ssfc-header-logo figure img {
+  object-fit: contain !important;
+  width: 100% !important;
+  height: auto !important;
+  object-position: top;
+}
+/* end */
+
+
+/* Change the "rounded style" button for images to become an irregular box style */
+.wp-block-image.is-style-rounded {
+  position: relative;
+}
+.wp-block-image.is-style-rounded img {
+  position: relative;
+  z-index: 1;
+}
+.wp-block-image.is-style-rounded:before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: #00000020;
+  z-index: 0;
+  transform: rotate(4deg);
+  transform-origin: top;
+}
+.wp-block-image.is-style-rounded img,
+.wp-block-image.is-style-rounded:before {
+  border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px;
+}
+/* end */
+
+
+
+/* Irregular box shape for container elements */
+.irregular-circle,
+.irregular-circle > img,
+.irregular-box,
+.irregular-box > img {
+  position: relative;
+  z-index: 1;
+}
+.irregular-box,
+.irregular-box:before,
+.irregular-box > img {
+  border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px;
+}
+
+.irregular-circle,
+.irregular-circle > img {
+  border-radius: 53% 47% 51% 49% / 50% 49% 51% 50%;
+}
+/* end */
+
+
+/* Article post tiles */
+.ssfc-post-tile {
+  box-shadow: 0 0 35px -35px #000;
+}
+.ssfc-post-tile > .wp-block-group {
+  width: 100%;
+}
+.post-image-container,
+.post-image-container img {
+  border-radius: 255px 10px 0 0 / 10px 225px 0 0px;
+  object-position: top;
+}
+.post-image-container {
+  aspect-ratio: 4 / 3;
+  background: #a6a39e;
+  width: 100%;
+  padding: 0 !important;
+  background-image: url("/wp-content/themes/ssfc/images/ssfc-logo-beige.svg");
+  background-repeat: no-repeat;
+  background-size: 45%;
+  background-position: center;
+}
+.wp-block-post .wp-block-read-more {
+  align-self: stretch;
+  width: auto;
+  display: flex;
+  font-size: 0.95em;
+  justify-content: space-between;
+  padding: 0.9em 1.6em !important;
+  transition: all 0.5s ease;
+  border-top: 2px dashed rgba(0,0,0,0.2);
+  margin-top: -3px;
+  outline: none;
+  border-radius: 255px 0 225px 25px / 15px 0 35px 255px;
+}
+.wp-block-post .wp-block-read-more:before {
+  content: "\2192";
+  order: 1;
+}
+.wp-block-post img {
+  aspect-ratio: inherit;
+}
+.wp-block-post .wp-block-post-excerpt__more-link {
+  display: none;
+}
+.wp-block-post .wp-block-separator {
+  width: 100%;
+}
+/* end */
+
+
+
+/* News page select category buttons */
+.ssfc-category-buttons ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 0.5em;
+  justify-content: center;
+  flex-wrap: wrap;
+  max-width: none;
+}
+.ssfc-category-buttons ul li a {
+  align-self: center;
+  padding: 0.5em 1em !important;
+  transition: all 0.5s ease;
+  letter-spacing: 1px;
+  outline: none;
+  border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px;
+  border-width: 1.5px;
+  border-color: rgba(255,255,255,0.5);
+  border-style: dashed;
+  text-decoration: none;
+  display: inline-block;
+  white-space: nowrap;
+  font-size: 0.95em;
+}
+.ssfc-category-buttons ul li.current-cat,
+.ssfc-category-buttons ul li a:hover {
+  background: rgba(255,255,255,0.1);
+}
+/* end */
+
+
+
+/* Buttons and inputs */
+.is-button,
+:root :where(.wp-element-button, .wp-block-button__link) {
+  align-self: center;
+  padding: 0.65em 1.6em !important;
+  transition: all 0.5s ease;
+  letter-spacing: 1px;
+  outline: none;
+  border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px;
+}
+:root :where(.wp-block-button.is-style-outline--9 .wp-block-button__link) {
+  border-width: 2px;
+  border-color: currentColor;
+  border-style: dashed;
+  text-decoration: none;
+}
+:root :where(.wp-block-search .wp-block-search__input) {
+  border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px;
+}
+/* end */
+
+
+
+/* Google maps on home page */
+.map-box {
+  overflow: hidden;
+  border-radius: 285px 10px 225px 8px / 5px 225px 12px 255px;
+}
+/* end */
+
+
+/* Home page register emoji list */
+ul.emoji-list {
+  list-style-type: none;
+  margin-left: 0.75em;
+  padding: 0;
+}
+ul.emoji-list li {
+  text-indent: -1.3em;
+  padding: 0.1em 0 0.3em 0;
+}
+/* end */
+
+
+/* Backgrounds */
+.ssfc-bg-ball {
+  background-image: url("/wp-content/themes/ssfc/images/ssfc-bg-ball.svg");
+  background-size: 70em;
+  background-repeat: no-repeat;
+  background-position: left -20%;
+}
+.ssfc-bg-balls{
+  background-image: url("/wp-content/themes/ssfc/images/ssfc-bg-balls.svg");
+  background-size: 130em;
+  background-position: center;
+}
+.ssfc-bg-hills{
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-image: url("/wp-content/themes/ssfc/images/ssfc-bg-hills.svg");
+}
+/* end */
+
+
+/* Ribbon Banner */
+.ribbon-banner {
+  display: table;
+  max-width: 85%;
+  font-size: clamp(1.75rem, 1.75rem + ((1vw - 0.2rem) * 0.5), 2rem);
+  line-height: 1.1;
+  position: relative;
+  text-align: center;
+  margin: .75em auto 1.25em;
+  margin-bottom: 2em;
+  z-index: 1;
+  margin-top: -1em;
+}
+.ribbon-banner > h2 {
+  padding: .4em 0.8em .4em 0.9em;
+  color: #D7D3CC !important;
+  background: #682331;
+  background: linear-gradient(to right, #682331, #732031, #661727);
+  text-shadow: 0 1px 3px #00000050;
+  border-radius: 255px 15px 225px 15px / 15px 225px 10px 255px;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+  position: relative;
+  margin: 0 !important;
+  font-size: inherit !important;
+}
+.ribbon-banner > *:before,
+.ribbon-banner > *:after {
+  font-size: inherit !important;
+  content: "";
+  position: absolute;
+  display: block;
+  bottom: -0.35em !important;
+  border-width: 0.85em;
+  border-style: solid;
+  border-color: #530e1c;
+  z-index: -1 !important;
+  outline: none !important;
+  outline-offset: unset !important;
+}
+.ribbon-banner > *:before {
+  left: -1em !important;
+  right: auto !important;
+  top: auto !important;
+  border-right-width: 1.5em;
+  border-left-width: 0.5em;
+  border-left-color: transparent;
+}
+.ribbon-banner > *:after {
+  right: -1em !important;
+  left: auto !important;
+  top: auto !important;
+  border-left-width: 1.5em;
+  border-right-width: 0.5em;
+  border-right-color: transparent;
+}
+.ribbon-banner:before,
+.ribbon-banner:after {
+  content: "";
+  position: absolute;
+  display: block;
+  border-style: solid;
+  border-color: #1e0207 transparent transparent transparent;
+  bottom: -0.35em !important;
+  z-index: 0;
+  outline: none !important;
+  outline-offset: unset !important;
+}
+.ribbon-banner:before {
+  left: 0.1em;
+  right: auto !important;
+  top: auto !important;
+  border-width: 0.35em 0 0 0.9em;
+}
+.ribbon-banner:after {
+  right: 0;
+  left: auto !important;
+  top: auto !important;
+  border-width: 0.40em 1em 0 0;
+  z-index: -1;
+}
+.ribbon-banner .block-list-appender {
+  display: none !important;
+}
+/* end */
+
+
+/* Hero sections */
+.hero-banner-blur {
+  overlay: hidden;
+}
+.hero-banner-blur img {
+  filter: blur(15px);
+  width: calc(100% + 3em) !important;
+  height: calc(100% + 3em) !important;
+  transform: translate(-1.5em, -1.5em);
+}
+/* end */
+
+
+/* Life member's bio page */
+.life-member-bio-img img {
+  object-position: top;
+}
+/* end */
