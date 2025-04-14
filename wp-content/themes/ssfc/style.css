@@ -26,13 +26,27 @@ Tags:
 .z-index-1 {
   z-index: 1;
 }
+.z-index-1 {
+  z-index: 1;
+}
 html {
   scroll-behavior: smooth;
 }
 .has-shadow {
     box-shadow: 0 0 35px -35px #000;
 }
+@media only screen and (max-width: 620px) {
+  .hide-mobile {
+    display: none;
+  }
+}
 /* end */
+
+@media only screen and (max-width: 620px) {
+  .image-grid-4x-wide {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
 
 /* Site main nav */
 .ssfc-header {
@@ -219,6 +233,14 @@ html {
 :root :where(.wp-block-search .wp-block-search__input) {
   border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px;
 }
+@media only screen and (max-width: 620px) {
+  .form-box {
+    margin-left: calc(var(--wp--style--root--padding-left) * -1) !important;
+    margin-right: calc(var(--wp--style--root--padding-right) * -1) !important;
+    border-radius: 0;
+  }
+}
+
 /* end */
 
 
